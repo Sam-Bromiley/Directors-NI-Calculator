@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Director's NI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="top-bar">Director's NI Calculator</div>
+      
+      <p class="info">Enter your gross NIable earnings and the week you became a director to calculate your NI due for Week 52/ Month 12. If you have previously paid NI in the year, enter the amounts paid in the right hand column</p>
+      <form id="input-form">
+        <h2>Gross Earnings</h2>  
+        <input id="gross-input" type="number" name="gross-input" placeholder="Gross NIable Pay"></input>
+      <br>
+        <input id="week-number" type="number" name="week-number" placeholder="Week employee made a director"></input>
+      <br>
+    <h2>NI already paid</h2>  
+    <input id="ees-paid" type="number" name="ees-paid" placeholder="Employees NI Already Paid"></input>
+      <br>
+    <input id="ers-paid" type="number" name="ers-paid" placeholder="Employers NI Already Paid"></input>
+      <br>
+      <div id="radio-form">
+        <h3>Tax Year</h3>
+      <input id="20-21" type="radio" name="year" value="20-21" checked>
+      <label for="20-21">2020/2021</label><br><br>
+      <input id="21-22" type="radio" name="year" value="21-22">
+      <label for="21-22">2021/2022</label><br>
+        </div>
+    
+     
+      <button type="button" id="calculate-button" onclick="getEarnings()">Calculate</button>
+    
+      </form>
+    <div id="ni-owed-answer">
+     <p>Employees NI: <span id="ees-ni-owed"></span></p>
+     <p>Employers NI: <span id="ers-ni-owed"></span></p>
+    </div>
+    <table id="20-21-table">
+      <tr>
+        <th>2020/2021</th>
+        <th>LEL</th>
+        <th>ST</th>
+        <th>PT</th>
+        <th>UEL</th>
+      </tr>
+      <tr>
+        <td>Weekly</td>
+        <td>120</td>
+        <td>169</td>
+        <td>183</td>
+        <td>962</td>
+      </tr>
+      <tr>
+        <td>2-Weekly</td>
+        <td>240</td>
+        <td>338</td>
+        <td>366</td>
+        <td>1924</td>
+      </tr>
+      <tr>
+        <td>4-Weekly</td>
+        <td>480</td>
+        <td>676</td>
+        <td>732</td>
+        <td>3848</td>
+      </tr>
+      <tr>
+        <td>Monthly</td>
+        <td>520</td>
+        <td>732</td>
+        <td>792</td>
+        <td>4167</td>
+      </tr>
+      <tr>
+        <td>Annual</td>
+        <td>6240</td>
+        <td>8788</td>
+        <td>9500</td>
+        <td>50000</td>
+      </tr>
+    </table>
+    <table id="21-22-table">
+      <tr>
+        <th>2021/2022</th>
+        <th>LEL</th>
+        <th>ST</th>
+        <th>PT</th>
+        <th>UEL</th>
+      </tr>
+      <tr>
+        <td>Weekly</td>
+        <td>120</td>
+        <td>170</td>
+        <td>184</td>
+        <td>967</td>
+      </tr>
+      <tr>
+        <td>2-Weekly</td>
+        <td>240</td>
+        <td>340</td>
+        <td>368</td>
+        <td>1934</td>
+      </tr>
+      <tr>
+        <td>4-Weekly</td>
+        <td>480</td>
+        <td>680</td>
+        <td>736</td>
+        <td>3867</td>
+      </tr>
+      <tr>
+        <td>Monthly</td>
+        <td>520</td>
+        <td>737</td>
+        <td>797</td>
+        <td>4189</td>
+      </tr>
+      <tr>
+        <td>Annual</td>
+        <td>6240</td>
+        <td>8840</td>
+        <td>9568</td>
+        <td>50270</td>
+      </tr>
+    </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

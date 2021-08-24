@@ -1,0 +1,140 @@
+#container {
+    box-sizing: border-box;
+    height: 200vh;
+    background-color: #f2efed;
+  }
+  #top-bar {
+    height: d40px;
+    font-size: 1.6em;
+    background-color: #091D34;
+    padding: 10px 30px;
+    border-bottom: 1px solid;
+    font-weight: bold;
+    color: #FD7208;
+  }
+  #header {
+    font-size: 2em;
+    text-align: left;
+    margin: 30px;
+    
+  }
+  
+  
+  
+  #input-form {
+    width: 90%;
+    display: block;
+    margin: 30px;
+    columns: 2;
+  }
+  #gross-input {
+    margin: 10px 20px;
+    width: 350px;
+    padding: 5px;
+    border-radius: 0.8em;
+    outline: none;
+  }
+  
+  #week-number {  
+    margin: 10px 20px;
+    width: 350px;
+    padding: 5px;
+    border-radius: 0.8em;
+    outline: none;
+  }
+  
+  #ees-paid {  
+    margin: 10px 20px;
+    width: 350px;
+    padding: 5px;
+    border-radius: 0.8em;
+    outline: none;
+  }
+  
+  #ers-paid {
+    margin: 10px 20px;
+    width: 350px;
+    padding: 5px;
+    border-radius: 0.8em;
+    outline: none;  
+  }
+  
+  #calculate-button {
+    padding: 5px 20px;  
+    margin: 20px;
+    width: 200px;
+    background-color: #2369B8;
+    outline: none;
+    box-shadow: 1px 1px 1px;
+    border-radius: 0.4em;
+    color: #FD7208;
+  }
+  
+  #radio-form {
+    margin: px;
+    padding: 0px 10px;
+    column-span: all;
+    width: 100%;
+  }
+  
+  
+  
+  
+  #calculate-button:hover {
+    outline: none;
+    box-shadow: -1px -1px 3px black;
+    transform: translate(0px, 1px);
+    background-color: #FD7208;
+    color: #2369B8;
+  }
+  
+  h2 {
+    margin: 0px 10px;
+    padding: 10px 0px;
+  }
+  .info {
+    margin: 10px 30px;
+  }
+  #ni-owed-answer {
+    width: 90%;
+    margin: 30px;
+    font-size: 1.1em;
+    background-color:d #9ccfff;
+    font-weight: bold;
+  }
+  #ni-owed-answer p {
+    padding: 5px 10px;
+  }
+  
+  table {
+    padding: 5px;
+    border: 1px solid;
+    border-collapse: collapse;
+    position: relative;
+    margin: 30px;
+    float: left;
+    width: 40%;
+    font-size: 1.1em;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #bababa;
+  }
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  th {
+    background-color: #2369B8;
+    color: #FD7208;
+  }
+  
+  tr th {
+    border: 1px solid black;
+    padding: 10px 5px;
+  }
+  
+  tr td {
+    border: 1px solid;
+    padding: 10px;
+  }
