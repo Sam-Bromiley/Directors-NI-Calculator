@@ -15,6 +15,7 @@ function getEarnings() {
   calculateAllowance();
 }
 
+
 //set the annual thresholds based on the year
 var niPt = 0;
 var niSt = 0;
