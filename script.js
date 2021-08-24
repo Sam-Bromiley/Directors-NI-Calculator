@@ -1,6 +1,9 @@
 niablePay = 0;
 numberOfPeriods = 0;
 
+//get the employees earnings
+//check the week employee made a director is valid (i.e 1-52) 
+//calculate the number of periods the employee is a director
 function getEarnings() {
   niablePay = document.getElementById('gross-input').value;
   console.log(niablePay);
@@ -8,11 +11,11 @@ function getEarnings() {
     alert('Please enter the week number the employee was made a director. This must be between 1 and 52')
   } else {
   numberOfPeriods = 53 - document.getElementById('week-number').value;
-  console.log(numberOfPeriods);
   }
   calculateAllowance();
 }
 
+//set the annual thresholds based on the year
 var niPt = 0;
 var niSt = 0;
 var niUel = 0;
@@ -28,20 +31,20 @@ function calculateAllowance() {
   } else {
     alert('Please Select a Tax Year')
   }
+
+  //work out weekly allowances
     eesAllowancesLower = (niPt/52) * numberOfPeriods;
-    console.log('eesAllowancesLower ' + eesAllowancesLower);
     ersAllowancesLower = (niSt/52) * numberOfPeriods;
-    console.log('ersAllowancesLower ' + ersAllowancesLower);
     eesAllowancesUpper = (niUel/52) * numberOfPeriods;
-    console.log('eesAllowancesUpper ' + eesAllowancesUpper);
   
-  console.log('niablePay ' + niablePay)
+
   calculateEesNi()
   calculateErsNi()
 }
 var niDue =0;
-var ersNiDue
+var ersNiDue;
 
+//calculate ees NI after checking which threshold they fall in
 function calculateEesNi() {
   if(niablePay < eesAllowancesLower) { //niable is less than PT
     niDue = 0;
@@ -49,16 +52,18 @@ function calculateEesNi() {
   } else if (niablePay > eesAllowancesLower && niablePay <= eesAllowancesUpper) { //niable greater than LEL but less than PT 
     niDue = ((niablePay - eesAllowancesLower) * 0.12).toFixed(2);
     console.log('lower niDue ' + niDue)
-} else if (niablePay > eesAllowancesUpper) {
+} else if (niablePay > eesAllowancesUpper) { // niable greater than UEL
   var niDueLower = (eesAllowancesUpper - eesAllowancesLower) * 0.12;
   var niDueUpper = (niablePay - eesAllowancesUpper) * 0.02;
   niDue = (niDueUpper + niDueLower).toFixed(2);
   console.log('upper niDue ' + niDue);
 } 
-  
+  //reduce ees NI by the amount already paid and display the result
   niDue = niDue - document.getElementById('ees-paid').value;
   document.getElementById('ees-ni-owed').innerHTML = "£" + niDue;
 }
+
+//calculate ees NI after checking which threshold they fall in
 function calculateErsNi() {
   if(niablePay < ersAllowancesLower) { //niable is less than ST
     ersNiDue = 0;
@@ -68,7 +73,7 @@ function calculateErsNi() {
     console.log('ers niDue ' + ersNiDue)
 } 
 
- 
+  //reduce ees NI by the amount already paid and display the result
   ersNiDue = ersNiDue - document.getElementById('ers-paid').value;
   document.getElementById('ers-ni-owed').innerHTML = "£" + ersNiDue; 
 }
